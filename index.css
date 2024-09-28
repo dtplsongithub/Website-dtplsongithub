@@ -1,0 +1,89 @@
+h1{
+    margin: 0;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+a{
+    color: white;
+    font-weight: 600;
+}
+
+div.portion img{
+    width: 41%;
+    padding: 0% 2%;
+    object-fit: contain;
+}
+
+div.portion{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 95%;
+    padding: 1% 2.5%;
+}
+
+div.portion-text h1{
+    font-family:"Poppins", sans-serif;
+}
+
+div#logo-portion h1{
+    filter: drop-shadow(4px 4px 1px #0008);
+    font-family:"Unbounded", sans-serif;
+}
+
+div.portion:nth-child(even){
+    background-color:white;
+    color:black;
+    clip-path: polygon(0% 4vh, 100% 0%, 100% calc(100% - 4vh), 0% 100%);
+    padding-top:2vh;
+    padding-bottom: 6vh;
+    text-align:right;
+    flex-direction: row-reverse;
+}
+
+div.portion:nth-child(even):last-child{
+    clip-path: polygon(0% 4vh, 100% 0%, 100% 100%, 0% 100%);
+    padding-bottom: 6vh;
+}
+
+div.portion:nth-child(odd){
+    color:white;
+    flex-direction: row;
+}
+
+@keyframes showIn {
+    from{
+        opacity:0;
+        transform: translateY(-1vh);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0vh);
+    }
+}
+
+div#content, div#content *{
+    animation: 1s showIn ease !important;
+}
+
+#blockmenu-wrapper, #blockmenu{
+    display:grid;
+}
+
+#blockmenu{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#blockmenu a{
+    text-decoration: none;
+    font-family: 'Unbounded', sans-serif;
+    color: black;
+    background: white;
+    margin: 0.4vh 0.4vw;
+    padding: 0.2vh 0.4vw;
+    text-transform: uppercase;
+    font-size: min(3vh, 3vw);
+}

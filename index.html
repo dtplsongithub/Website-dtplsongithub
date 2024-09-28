@@ -1,1 +1,184 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerulean Blue</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div id="content" class="hidden">
+        <div class="portion" id="logo-portion">
+            <img src="logo-w.png" alt="Cerulean Blue Logo" class="logo"></img>
+            <div class="portion-text">
+                <h1>Welcome to the Cerulean Blue website!</h1>
+                <p>Cerulean Blue is a team of amateur coders passionate with making fun, free and <a href="https://en.wikipedia.org/wiki/Open_source">open-source</a> software.  It’s all on <a href="https://github.com/">Github</a> - we encourage you to contribute. Even reporting a bug or issue can help!</p>
+            </div>
+        </div>
+        <div class="portion">
+            <div class="portion-text">
+                <h1>Current state</h1>
+                <p>As of right now, we haven't made any projects. We are a new team, and, <i>good things take time</i>. But feel free to look back again soon! This can soon change into a big team, have a bunch of projects, or maybe both, but only time can tell.</p>
+            </div>
+        </div>
+        <div id="blockmenu-wrapper"><div id="blockmenu">
+            <a href="https://github.com/Team-Cerulean-Blue/Website">Website Repo</a>
+            <a href="https://github.com/Team-Cerulean-Blue">GitHub Organization</a>
+            <a href="/blogs">Blogs</a>
+            <a href="https://discord.gg/xAy2T2PzVk">Discord Server</a>
+        </div></div>
+    </div>
+    <div id="loading-screen">
+        <p>Loading...</p>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap');
+        html,body{
+            margin:0;
+            padding:0;
+            width:100%;
+            height:100%;
+
+            background:#2a52be;
+            font-family:"Open Sans",sans-serif;
+        }
+
+        body div:not(body * div){
+            width:100%;
+            height:100%;
+            margin:0;
+            position: absolute;
+            top:0px;
+            left:0px;
+        }
+
+        @keyframes loadingIn {
+            from{
+                opacity:0;
+                transform:translateY(1vh);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        @keyframes loadingBold{
+            from{
+                font-weight: 200;
+            }
+            to{
+                font-weight: 800;
+            }
+        }
+
+        @keyframes loadingShadow{
+            0%{
+                filter: drop-shadow(8px 8px 4px #000a);
+            }
+            12.5%{
+                filter: drop-shadow(0px 12px 4px #000a);
+            }
+            25%{
+                filter: drop-shadow(-8px 8px 4px #000a);
+            }
+            37.5%{
+                filter: drop-shadow(-12px 0px 4px #000a);
+            }
+            50%{
+                filter: drop-shadow(-8px -8px 4px #000a);
+            }
+            62.5%{
+                filter: drop-shadow(0px -12px 4px #000a);
+            }
+            75%{
+                filter: drop-shadow(8px -8px 4px #000a);
+            }
+            87.5%{
+                filter: drop-shadow(12px 0px 4px #000a);
+            }
+            100%{
+                filter: drop-shadow(8px 8px 4px #000a);
+            }
+        }
+
+        @keyframes loadingBackground{
+            0%{
+                background:#0a329e;
+            }
+            50%{
+                background:#2a52be;
+            }
+            100%{
+                background:#0a329e;
+            }
+        }
+
+        div#loading-screen{
+            animation: 8s loadingBackground ease infinite;
+            color:#fff;
+        }
+
+        div#loading-screen p{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width:100%;height:100%;
+            margin:0;
+            animation: 1s loadingIn cubic-bezier(0, 0, 0, 1), 2s loadingBold ease-in-out alternate infinite, 5s loadingShadow linear infinite;
+            font-size: min(5vw,5vh);
+            user-select: none;
+            font-family:"Unbounded", sans-serif;
+        }
+
+        div#loading-screen{
+            overflow:hidden;
+        }
+
+        @keyframes loadingLongHide{
+            0%{
+                opacity:0;
+            }
+            95%{
+                opacity:0;
+            }
+            100%{
+                opacity:1;
+            }
+        }
+
+        div#loading-screen::after{
+            white-space: pre;
+            content:"Uhhhh...this screen shouldn't last this long.\AHave you checked your Internet connection?";
+            position: absolute;
+            bottom: min(2vw,2vh);
+            right: min(2vw,2vh);
+            text-align: right;
+            font-size: min(1.3vw,1.3vh);
+            animation:10s loadingLongHide linear;
+        }
+
+        @keyframes loadingOut {
+            from{
+                display:block;
+                opacity:1;
+            }
+            to{
+                display:block;
+                opacity:0;
+            }
+        }
+
+        div#loading-screen.hidden{
+            animation:1s loadingOut ease;
+            display:none;
+        }
+
+        div#content.hidden, div#content .hidden{
+            display:none;
+        }
+    </style>
+</body>
+</html>

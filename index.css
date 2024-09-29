@@ -87,3 +87,25 @@ div#content, div#content *{
     text-transform: uppercase;
     font-size: min(3vh, 3vw);
 }
+
+@media (orientation: portrait){
+    div.portion:nth-child(odd){
+        flex-direction: column;
+    }
+    div.portion:nth-child(even){
+        flex-direction: column-reverse;
+    }
+    div.portion img{
+        width: 96%;
+        padding: 0% 2%;
+        margin-bottom:2vh;
+        object-fit: contain;
+    }
+    #blockmenu{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #blockmenu a{
+        font-size: min(6vh, 6vw);
+    }
+    /* styles for vertical aspect ratio */
+}

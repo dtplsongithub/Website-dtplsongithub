@@ -109,20 +109,3 @@ div#content, div#content *{
     }
     /* styles for vertical aspect ratio */
 }
-
-div.blogsTitle{
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    width: 95%;
-    height: 40px;
-    padding: 1% 2.5%;
-    background-color:#2a52be;
-    color:white;
-    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 4vh), 0% 100%);
-    padding-top:2vh;
-    padding-bottom: 6vh;
-    text-align:right;
-    flex-direction: row-reverse;
-    object-fit: contain;
-}

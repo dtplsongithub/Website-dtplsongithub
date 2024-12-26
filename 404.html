@@ -8,6 +8,7 @@
 <body>
     <canvas id="bg"></canvas>
     <div id="wrapper">
+        <div id="code"><b>404</b></div>
         <div id="text">
             <h1>We couldn't find what you were looking for.</h1>
             <p>Please check for any typos in case you manually typed the URL, that happens sometimes.</p>
@@ -39,12 +40,25 @@
             align-items: center;
         }
 
-        h1{
+        div#text {
+            display:block;
+            z-index:2;
+        }
+
+        div#code {
+            position:absolute;
+            color:#333;
+            font-size: 160px;
+            display:block;
+            z-index:1;
+        }
+
+        h1, div#code {
             font-family: 'Unbounded', sans-serif;
             margin:0;
         }
 
-        p{
+        p {
             margin-top:0.7em;
         }
 
